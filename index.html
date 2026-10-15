@@ -4,233 +4,48 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Raamiz Jafri | Portfolio</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<style>
-:root{--ink:#1d2329;--muted:#5b6670;--line:#dde2e6;--bg:#f7f8f9;--card:#fff;--accent:#500000}
-*{box-sizing:border-box}
-body{margin:0;font-family:Georgia,"Times New Roman",serif;color:var(--ink);background:var(--bg);line-height:1.6}
-header{background:var(--accent);color:#fff;padding:48px 20px 40px;text-align:center}
-header h1{margin:0;font-size:2.4rem;letter-spacing:.5px}
-header p{margin:8px 0 0;font-size:1.1rem;opacity:.9}
-nav{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid var(--line);display:flex;justify-content:center;flex-wrap:wrap;gap:4px 18px;padding:10px}
-nav a{color:var(--accent);text-decoration:none;font-size:.95rem}
-main{max-width:900px;margin:0 auto;padding:0 16px 40px}
-section{padding:36px 0 8px;border-bottom:1px solid var(--line)}
-h2{font-size:1.6rem;margin:0 0 16px;color:var(--accent)}
-h3{margin:18px 0 6px;font-size:1.05rem}
-.card{background:var(--card);border:1px solid var(--line);border-radius:8px;margin:0 0 16px;overflow:hidden}
-.card summary{cursor:pointer;padding:16px 18px;list-style:none}
-.card summary::-webkit-details-marker{display:none}
-.card summary b{display:block;font-size:1.1rem}
-.card summary span{color:var(--muted);font-size:.92rem}
-.card summary::after{content:"Open ▾";display:block;margin-top:6px;color:var(--accent);font-size:.85rem}
-.card[open] summary::after{content:"Close ▴"}
-.card .body{padding:0 18px 18px;border-top:1px solid var(--line)}
-ul{padding-left:20px;margin:6px 0}
-#map{height:380px;border-radius:6px;border:1px solid var(--line);margin:10px 0}
-iframe{width:100%;height:520px;border:1px solid var(--line);border-radius:6px}
-.small{color:var(--muted);font-size:.88rem}
-.job{margin-bottom:14px}
-.job .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:0 12px}
-a{color:var(--accent)}
-footer{text-align:center;padding:24px;color:var(--muted);font-size:.85rem}
-@media(max-width:600px){header h1{font-size:1.8rem}#map{height:300px}iframe{height:420px}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>Raamiz Jafri</h1>
-</header>
-
-<nav>
-  <a href="#about">About</a><a href="#projects">Projects</a><a href="#resume">Resume</a><a href="#contact">Contact</a>
+<nav class="menu">
+  <a class="brand" href="index.html">Raamiz Jafri</a>
+  <ul>
+    <li><a class="active" href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="resume.html">Resume</a></li>
+  </ul>
 </nav>
+
+<header class="hero">
+  <h1>Raamiz Jafri</h1>
+  <p>Geographic Information Science and Technology · Texas A&amp;M University · December 2026</p>
+</header>
 
 <main>
 
-<section id="about">
-  <h2>About</h2>
-  <p>I am completing a B.S. in Geographic Information Science and Technology at Texas A&amp;M University, graduating in December 2026. I work in ArcGIS Pro, ArcGIS Online, and ArcGIS StoryMaps. I hold the AWS Cloud Practitioner and Lean Six Sigma Yellow Belt certifications, and I have been a member of the Cyber Security Club at Texas A&amp;M.</p>
+<section>
+  <h2>Featured Project</h2>
+  <div class="feature">
+    <h3 style="margin-top:0">The Politics of Pilgrimage</h3>
+    <p class="small">Hajj Quota Allocations and Muslim Population Rates Across the Middle East · GEOG 395 Cartography and Geovisualization · Spring 2026</p>
+    <p>Saudi Arabia controls how many pilgrims each country may send to Hajj through a quota of one slot per 1,000 Muslim residents. I designed a bivariate thematic map in ArcGIS Pro comparing absolute Hajj quota and quota as a rate of Muslim population across 10 Middle Eastern countries, then built a flow map and an attendance chart and assembled them into an ArcGIS StoryMap.</p>
+    <p>Overall the map reveals that Hajj quota allocation is not a straightforward reflection of Muslim population size.</p>
+    <a class="btn" href="project-1.html">View the project</a>
+  </div>
 </section>
 
-<section id="projects">
-  <h2>Projects</h2>
-
-  <details class="card">
-    <summary><b>The Politics of Pilgrimage</b><span>Hajj Quota Allocations and Muslim Population Rates Across the Middle East · GEOG 395 Cartography and Geovisualization · Spring 2026</span></summary>
-    <div class="body">
-      <h3>Problem</h3>
-      <p>Saudi Arabia controls how many pilgrims each country may send to Hajj through a quota of one slot per 1,000 Muslim residents. The project asked which Middle Eastern countries send the most pilgrims to Mecca and whether that number reflects the quota.</p>
-      <h3>What I did</h3>
-      <ul>
-        <li>Designed a bivariate thematic map in ArcGIS Pro comparing two variables across 10 Middle Eastern countries: absolute Hajj quota and quota as a rate of Muslim population</li>
-        <li>Used a 3x3 bivariate color matrix (teal for quota, amber/orange for rate), classified each variable with Natural Breaks (Jenks), and assigned hex colors manually because ArcGIS Pro has no built-in bivariate choropleth tool</li>
-        <li>Resolved ArcGIS Pro publishing errors (projection conflict 00230, in-memory join 00226, symbol class visibility 00422) and published the map to ArcGIS Online</li>
-        <li>Built a flow map where line thickness is proportional to each country's quota</li>
-        <li>Built a bar chart of annual Hajj attendance, 2016–2023 (Saudi General Authority for Statistics)</li>
-        <li>Assembled everything into an ArcGIS StoryMap, collected feedback from three reviewers, and revised the StoryMap in response</li>
-      </ul>
-      <h3>What I found</h3>
-      <ul>
-        <li>Bahrain had the highest rate: 2,094 slots for about 866,000 Muslims, about 0.24%</li>
-        <li>Iran had the largest absolute quota at 87,550 slots, about 0.10% of its roughly 84 million Muslims</li>
-        <li>Turkey and Egypt fell into Medium Quota / Low Rate; Iraq and Jordan into Low Quota / Low Rate</li>
-        <li>Attendance fell from about 2.49 million (2019) to 10,000 (2020) and 60,000 (2021) under COVID-19 restrictions, then recovered to about 1.85 million by 2023</li>
-      </ul>
-      <p>Overall the map reveals that Hajj quota allocation is not a straightforward reflection of Muslim population size.</p>
-      <h3>Map: quota categories by country</h3>
-      <p class="small">Click a point to see its category. Points sit at approximate country centers; the line style toward Mecca echoes the flow map.</p>
-      <div id="map"></div>
-      <h3>What I would do differently</h3>
-      <p>The overlapping flow lines at Mecca made the flow map hard to read; I would add labels over each line to distinguish which country connects with which line.</p>
-      <h3>StoryMap</h3>
-      <iframe src="https://storymaps.arcgis.com/stories/7b68f4bd9ef5439ea4f34f172199fffd" title="The Politics of Pilgrimage StoryMap" loading="lazy" allowfullscreen></iframe>
-      <p class="small">Open it full screen: <a href="https://arcg.is/1P5ii44" target="_blank" rel="noopener">Final StoryMap</a> · <a href="https://arcg.is/1qSLrS5" target="_blank" rel="noopener">Attendance chart</a></p>
-      <p class="small">Data: World Population Review (Hajj quota by country); Pew Research Center, Muslim population change (2025); Statista, Saudi Arabia total Hajj pilgrims; Iran International (2024).</p>
-    </div>
-  </details>
-
-  <details class="card">
-    <summary><b>Exploring Spatial Patterns of Obesity &amp; Recreational Access in the United States</b><span>GEOG 478 · Texas A&amp;M University · Team project · My role: data collection and dashboard design</span></summary>
-    <div class="body">
-      <p class="small">Team: Geena Ginu, Adam Burns, Raamiz Jafri, Julian Gomez</p>
-      <h3>Problem</h3>
-      <p>Obesity rates vary across states, and access to recreational facilities may be one factor shaping these patterns. Research question: Do states with lower access to recreational facilities have higher obesity rates?</p>
-      <h3>What we did</h3>
-      <ul>
-        <li>Collected state-level adult obesity rates from the CDC Behavioral Risk Factor Surveillance System (BRFSS), 2022</li>
-        <li>Collected recreational facility data from the EPA Smart Location Database and Homeland Infrastructure Foundation-Level Data (HIFLD)</li>
-        <li>Used U.S. Census Bureau 2022 state population estimates to normalize facilities per 100,000 residents</li>
-        <li>Joined and cleaned the datasets by state</li>
-        <li>Built an interactive WebGIS application with Leaflet.js, HTML, CSS, JavaScript, and GeoJSON state boundaries</li>
-        <li>Created two choropleth layers (obesity rate; recreational facilities per 100,000 residents) with layer toggling and click-for-detail popups</li>
-      </ul>
-      <h3>What we found</h3>
-      <ul>
-        <li>A moderate negative correlation (r = -0.33): states with greater recreational access tend to have lower obesity rates</li>
-        <li>Southern states such as Mississippi, Alabama, and Louisiana show consistently higher obesity rates</li>
-        <li>Western and northern states generally show lower obesity rates and greater recreational access; Montana, Wyoming, and Alaska rank among the highest in recreational facility access per capita</li>
-        <li>The correlation is not strong enough to imply causation; income, education, diet, healthcare access, and cultural behaviors likely also play a role</li>
-      </ul>
-      <h3>What I would do differently</h3>
-      <p>State-level data and missing factors like income and diet affect the results; I would add more variables and expand the analysis to city-level data.</p>
-      <p class="small"><a href="https://github.com/tamu-edu-students/GEOG-JulianGomez-GEOG478/tree/main/project" target="_blank" rel="noopener">Team GitHub repository (final map)</a></p>
-      <p class="small">Data: CDC BRFSS 2022 Adult Obesity Prevalence Maps; EPA Smart Location Database; HIFLD Public Recreational Areas; U.S. Census Bureau 2022 State Population Estimates; Ding et al. (2011); Sallis et al. (2016).</p>
-    </div>
-  </details>
-
-  <details class="card">
-    <summary><b>[ADD Project 3 title]</b><span>[ADD course and date]</span></summary>
-    <div class="body">
-      <h3>Problem</h3><p>[ADD]</p>
-      <h3>What I did</h3><p>[ADD]</p>
-      <h3>What I found</h3><p>[ADD]</p>
-      <h3>What I would do differently</h3><p>[ADD]</p>
-    </div>
-  </details>
-</section>
-
-<section id="resume">
-  <h2>Resume</h2>
-
-  <h3>Education</h3>
-  <div class="job">
-    <div class="row"><b>Texas A&amp;M University, College Station, Texas</b><span>December 2026</span></div>
-    <i>Bachelor of Science in Geographic Information Science and Technology</i>
-    <ul><li>GPA: 3.55</li></ul>
-  </div>
-
-  <h3>Certifications</h3>
-  <ul><li>AWS Cloud Practitioner</li><li>Lean Six Sigma Yellow Belt</li></ul>
-
-  <h3>Experience</h3>
-  <div class="job">
-    <div class="row"><b>Nexeo Plastics, The Woodlands, Texas</b><span>July 2026 – Present</span></div>
-    <i>Cyber Security Analyst</i>
-    <ul>
-      <li>Monitor security logs and alerts across the corporate environment via the SOC to identify, triage, and respond to potential threats</li>
-      <li>Manage endpoint security and monitoring across the device fleet using NinjaOne</li>
-      <li>Perform vulnerability scanning and remediation tracking with Tenable to reduce organizational risk exposure</li>
-      <li>Support identity and access management (IAM) processes, applying least-privilege principles to user access decisions</li>
-      <li>Lead a company-wide multi-factor authentication migration from Okta to Cisco Duo, coordinating application testing and cross-department rollout</li>
-    </ul>
-  </div>
-  <div class="job">
-    <div class="row"><b>Hilcorp Energy Company, Houston, Texas</b><span>May 2024 – August 2024</span></div>
-    <i>IT Infrastructure Cyber Security Analyst</i>
-    <ul>
-      <li>Strengthened security posture firm by developing and implementing compliance-driven protocols, protecting sensitive oil and gas data, and reducing vulnerabilities.</li>
-      <li>Led enterprise level cybersecurity project, collaborating across teams and presenting results and strategic recommendations to the CEO and executive leadership.</li>
-      <li>Resolves over 100 help desk tickets supporting network security and system administration issues, enhancing operational efficiency and end user support across the organization.</li>
-    </ul>
-  </div>
-  <div class="job">
-    <div class="row"><b>Lavner Education, Houston, Texas</b><span>June 2023 – August 2023</span></div>
-    <i>Information Technology Analyst</i>
-    <ul>
-      <li>Optimized inventory management systems by introducing streamlined processes, resulting in improved reporting accuracy and operational efficiency.</li>
-      <li>Designed and implemented programming projects in C++, Java, and HTML, achieving a 100% completion and success rate</li>
-    </ul>
-  </div>
-
-  <h3>Projects</h3>
-  <div class="job">
-    <b>Cloud Infrastructure Deployment (AWS)</b>
-    <ul>
-      <li>Built a multi-tier network in AWS with one VPC, public/private subnets across 2 AZs, Internet/NAT Gateways, and route tables.</li>
-      <li>Deployed web tier on EC2 in private subnets behind an Application Load Balancer with an Auto Scaling Group.</li>
-      <li>Enforced least privilege with IAM roles, Security Groups, and NACLs; no public SSH.</li>
-      <li>Automated provisioning via CloudFormation and post-build config with Ansible using SSM; standardized repeatable builds.</li>
-      <li>Observability with CloudWatch dashboards and alarms (ALB latency, 5XXs, EC2 CPU).</li>
-    </ul>
-  </div>
-
-  <h3>Technical Skills</h3>
-  <ul>
-    <li>Networking: TCP/IP, VLANs, ACLs, NAT, VPN, Firewalls (Palo Alto, Cisco ASA), Cisco Meraki</li>
-    <li>Security Tooling: Tenable, NinjaOne, SIEM/Log Monitoring, IAM &amp; Least-Privilege Access</li>
-    <li>Cloud: AWS, Azure DevOps</li>
-    <li>Programming: Python, PowerShell, C++</li>
-  </ul>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:Raamizjafri10@gmail.com">Raamizjafri10@gmail.com</a></p>
+<section>
+  <h2>More</h2>
+  <p><a href="projects.html">All projects</a> · <a href="about.html">About me</a> · <a href="resume.html">Resume</a></p>
 </section>
 
 </main>
 
-<footer>© 2026 Raamiz Jafri · Map tiles © Esri</footer>
+<footer>
+  <a href="mailto:Raamizjafri10@gmail.com">Raamizjafri10@gmail.com</a>
+</footer>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>
-var mecca=[21.4225,39.8262];
-var points=[
-  {name:"Iran",ll:[32.4,53.7],cat:"High Quota / Medium Rate",note:"87,550 slots, about 0.10% of roughly 84 million Muslims"},
-  {name:"Bahrain",ll:[26.07,50.55],cat:"Low Quota / High Rate",note:"2,094 slots for about 866,000 Muslims, about 0.24%"},
-  {name:"Syria",ll:[34.8,38.99],cat:"Medium Quota / High Rate",note:""},
-  {name:"Turkey",ll:[39.0,35.2],cat:"Medium Quota / Low Rate",note:""},
-  {name:"Egypt",ll:[26.8,30.8],cat:"Medium Quota / Low Rate",note:""},
-  {name:"Iraq",ll:[33.2,43.7],cat:"Low Quota / Low Rate",note:""},
-  {name:"Jordan",ll:[30.6,36.2],cat:"Low Quota / Low Rate",note:""}
-];
-var map,built=false;
-function buildMap(){
-  if(built){map.invalidateSize();return}
-  built=true;
-  map=L.map("map",{scrollWheelZoom:false}).setView([29,43],4);
-  L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",{attribution:"Tiles © Esri",maxZoom:18}).addTo(map);
-  points.forEach(function(p){
-    L.polyline([p.ll,mecca],{color:"#2a7f7f",weight:2,opacity:.6,dashArray:"4 4"}).addTo(map);
-    L.circleMarker(p.ll,{radius:8,color:"#fff",weight:2,fillColor:"#2a7f7f",fillOpacity:.95})
-      .bindPopup("<b>"+p.name+"</b><br>"+p.cat+(p.note?"<br>"+p.note:"")).addTo(map);
-  });
-  L.circleMarker(mecca,{radius:9,color:"#fff",weight:2,fillColor:"#c87a1e",fillOpacity:1})
-    .bindPopup("<b>Mecca, Saudi Arabia</b><br>Destination for Hajj").addTo(map);
-}
-document.querySelector("#projects details").addEventListener("toggle",function(){if(this.open)setTimeout(buildMap,50)});
-</script>
 </body>
 </html>
