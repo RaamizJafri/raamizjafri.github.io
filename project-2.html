@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Obesity &amp; Recreational Access | Raamiz Jafri</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="menu">
+  <a class="brand" href="index.html">Raamiz Jafri</a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a class="active" href="projects.html">Projects</a></li>
+    <li><a href="resume.html">Resume</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <span class="contour"></span>
+  <span class="ping" style="left:12%;top:30%"></span>
+  <span class="ping" style="left:82%;top:62%"></span>
+  <span class="ping" style="left:68%;top:22%"></span>
+  <h1>Obesity &amp; Recreational Access</h1>
+  <p>Exploring Spatial Patterns of Obesity &amp; Recreational Access in the United States</p>
+  <span class="coords">30.6187° N · 96.3365° W</span>
+</header>
+
+<main>
+<section>
+
+      <p class="small">GEOG 478 · Texas A&amp;M University · Team project · My role: data collection and dashboard design</p>
+      <p class="small">Team: Geena Ginu, Adam Burns, Raamiz Jafri, Julian Gomez</p>
+      <h2>Problem</h2>
+      <p>Obesity rates vary across states, and access to recreational facilities may be one factor shaping these patterns. Research question: Do states with lower access to recreational facilities have higher obesity rates?</p>
+      <h2>What we did</h2>
+      <ul>
+        <li>Collected state-level adult obesity rates from the CDC Behavioral Risk Factor Surveillance System (BRFSS), 2022</li>
+        <li>Collected recreational facility data from the EPA Smart Location Database and Homeland Infrastructure Foundation-Level Data (HIFLD)</li>
+        <li>Used U.S. Census Bureau 2022 state population estimates to normalize facilities per 100,000 residents</li>
+        <li>Joined and cleaned the datasets by state</li>
+        <li>Built an interactive WebGIS application with Leaflet.js, HTML, CSS, JavaScript, and GeoJSON state boundaries</li>
+        <li>Created two choropleth layers (obesity rate; recreational facilities per 100,000 residents) with layer toggling and click-for-detail popups</li>
+      </ul>
+      <h2>What we found</h2>
+      <ul>
+        <li>A moderate negative correlation (r = -0.33): states with greater recreational access tend to have lower obesity rates</li>
+        <li>Southern states such as Mississippi, Alabama, and Louisiana show consistently higher obesity rates</li>
+        <li>Western and northern states generally show lower obesity rates and greater recreational access; Montana, Wyoming, and Alaska rank among the highest in recreational facility access per capita</li>
+        <li>The correlation is not strong enough to imply causation; income, education, diet, healthcare access, and cultural behaviors likely also play a role</li>
+      </ul>
+      <h2>What I would do differently</h2>
+      <p>State-level data and missing factors like income and diet affect the results; I would add more variables and expand the analysis to city-level data.</p>
+      <p class="small"><a href="https://github.com/tamu-edu-students/GEOG-JulianGomez-GEOG478/tree/main/project" target="_blank" rel="noopener">Team GitHub repository (final map)</a></p>
+      <p class="small">Data: CDC BRFSS 2022 Adult Obesity Prevalence Maps; EPA Smart Location Database; HIFLD Public Recreational Areas; U.S. Census Bureau 2022 State Population Estimates; Ding et al. (2011); Sallis et al. (2016).</p>
+  <p><a href="projects.html">← Back to projects</a></p>
+</section>
+</main>
+
+<footer>
+  <a href="mailto:Raamizjafri10@gmail.com">Raamizjafri10@gmail.com</a>
+</footer>
+
+</body>
+</html>

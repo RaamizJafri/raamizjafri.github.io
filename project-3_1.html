@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cloud Infrastructure Deployment | Raamiz Jafri</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="menu">
+  <a class="brand" href="index.html">Raamiz Jafri</a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a class="active" href="projects.html">Projects</a></li>
+    <li><a href="resume.html">Resume</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <span class="contour"></span>
+  <span class="ping" style="left:12%;top:30%"></span>
+  <span class="ping" style="left:82%;top:62%"></span>
+  <span class="ping" style="left:68%;top:22%"></span>
+  <h1>Cloud Infrastructure Deployment (AWS)</h1>
+  <span class="coords">30.6187° N · 96.3365° W</span>
+</header>
+
+<main>
+<section>
+  <h2>What I did</h2>
+  <ul>
+    <li>Built a multi-tier network in AWS with one VPC, public/private subnets across 2 AZs, Internet/NAT Gateways, and route tables.</li>
+    <li>Deployed web tier on EC2 in private subnets behind an Application Load Balancer with an Auto Scaling Group.</li>
+    <li>Enforced least privilege with IAM roles, Security Groups, and NACLs; no public SSH.</li>
+    <li>Automated provisioning via CloudFormation and post-build config with Ansible using SSM; standardized repeatable builds.</li>
+    <li>Observability with CloudWatch dashboards and alarms (ALB latency, 5XXs, EC2 CPU).</li>
+  </ul>
+
+  <p><a href="projects.html">← Back to projects</a></p>
+</section>
+</main>
+
+<footer>
+  <a href="mailto:Raamizjafri10@gmail.com">Raamizjafri10@gmail.com</a>
+</footer>
+
+</body>
+</html>
