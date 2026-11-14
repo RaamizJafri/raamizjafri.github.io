@@ -14,7 +14,84 @@
   <div class="bar"></div>
 </div>
 
+<nav class="menu"><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raamiz Jafri | Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="splash" aria-hidden="true" title="Click to skip">
+  <svg class="world" viewBox="300 60 900 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><image href="world.svg" x="0" y="0" width="1600" height="820"/><path class="flow long" d="M406.6 258.1 Q686.6 88.1 966.6 303.9"/><path class="flow" style="animation-delay:0.25s" d="M939.4 216.5 Q939.0 194.5 966.6 303.9"/><circle class="node" cx="939.4" cy="216.5" r="2.6"/><path class="flow" style="animation-delay:0.35s" d="M957 237.3 Q947.8 215.3 966.6 303.9"/><circle class="node" cx="957" cy="237.3" r="2.6"/><path class="flow" style="animation-delay:0.45s" d="M976.9 245.3 Q985.8 223.3 966.6 303.9"/><circle class="node" cx="976.9" cy="245.3" r="2.6"/><path class="flow" style="animation-delay:0.55s" d="M1018 249.2 Q1006.3 227.2 966.6 303.9"/><circle class="node" cx="1018" cy="249.2" r="2.6"/><path class="flow" style="animation-delay:0.65s" d="M947.8 258.2 Q943.2 236.2 966.6 303.9"/><circle class="node" cx="947.8" cy="258.2" r="2.6"/><path class="flow" style="animation-delay:0.75s" d="M927.2 277.1 Q932.9 255.1 966.6 303.9"/><circle class="node" cx="927.2" cy="277.1" r="2.6"/><path class="flow" style="animation-delay:0.85s" d="M1009.1 280.8 Q1001.9 258.8 966.6 303.9"/><circle class="node" cx="1009.1" cy="280.8" r="2.6"/><circle class="node home" cx="406.6" cy="258.1" r="4"/><circle class="ring home" cx="406.6" cy="258.1" r="4"/><circle class="node home" cx="966.6" cy="303.9" r="4.5"/><circle class="ring home" cx="966.6" cy="303.9" r="4.5" style="animation-delay:.6s"/></svg>
+  <div class="scan"></div>
+  <div class="vignette"></div>
+  <div class="hud">
+    <p>LOADING MAP LAYERS</p>
+    <div class="bar"></div>
+    <p class="sub">30.6187° N · 96.3365° W</p>
+  </div>
+</div>
+<script>
+(function(){
+  var s=document.querySelector(".splash");if(!s)return;
+  if(window.innerWidth<window.innerHeight){var w=s.querySelector("svg.world");if(w)w.setAttribute("viewBox","760 120 420 420");}
+  try{if(sessionStorage.getItem("rj-splash")){s.remove();return;}sessionStorage.setItem("rj-splash","1");}catch(e){}
+  var gone=false;function hide(){if(gone)return;gone=true;s.classList.add("done");setTimeout(function(){s.remove();},600);}
+  setTimeout(hide,2300);s.addEventListener("click",hide);document.addEventListener("keydown",hide,{once:true});
+})();
+</script>
+
 <nav class="menu">
+  <a class="brand" href="index.html">Raamiz Jafri</a>
+  <ul>
+    <li><a class="active" href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="resume.html">Resume</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <span class="contour"></span>
+  <span class="ping" style="left:12%;top:30%"></span>
+  <span class="ping" style="left:82%;top:62%"></span>
+  <span class="ping" style="left:68%;top:22%"></span>
+  <h1>Raamiz Jafri</h1>
+  <p class="role">Seeking a Cyber Security Analyst role</p>
+  <p>Geographic Information Science and Technology · Texas A&amp;M University · December 2026</p>
+  <span class="coords">30.6187° N · 96.3365° W</span>
+</header>
+
+<main>
+
+<section>
+  <h2>Featured Project</h2>
+  <div class="feature">
+    <h3 style="margin-top:0">The Politics of Pilgrimage</h3>
+    <p class="small">Hajj Quota Allocations and Muslim Population Rates Across the Middle East · GEOG 395 Cartography and Geovisualization · Spring 2026</p>
+    <p>Saudi Arabia controls how many pilgrims each country may send to Hajj through a quota of one slot per 1,000 Muslim residents. I designed a bivariate thematic map in ArcGIS Pro comparing absolute Hajj quota and quota as a rate of Muslim population across 10 Middle Eastern countries, then built a flow map and an attendance chart and assembled them into an ArcGIS StoryMap.</p>
+    <p>Overall the map reveals that Hajj quota allocation is not a straightforward reflection of Muslim population size.</p>
+    <a class="btn" href="project-1.html">View the project</a>
+  </div>
+</section>
+
+<section>
+  <h2>More</h2>
+  <p><a href="projects.html">All projects</a> · <a href="about.html">About me</a> · <a href="resume.html">Resume</a></p>
+</section>
+
+</main>
+
+<footer>
+  <a href="mailto:Raamizjafri10@gmail.com">Raamizjafri10@gmail.com</a>
+</footer>
+
+</body>
+</html>
+
   <a class="brand" href="index.html">Raamiz Jafri</a>
   <ul>
     <li><a class="active" href="index.html">Home</a></li>
